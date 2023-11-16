@@ -1,0 +1,82 @@
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 40px 10px 40px;
+    font-family: sans-serif;
+}
+.logo-m{
+    margin-right: 50px;
+}
+
+.logo {
+    width: 110px;
+    margin-left: 130px;
+    margin-right: 250px;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    text-decoration: overline;
+}
+
+.nav-links a {
+    color: black;;
+    text-align: center;
+    padding: 0px 16px;
+    text-decoration: none;
+    margin: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: overline; 
+}
+
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Create a container for the biodata */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+/* Style the profile image */
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Style the biodata information */
+.info {a
+    background-color: #ffffff;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.info h1 {
+    font-size: 24px;
+}
+
+.info p {
+    font-size: 16px;
+}

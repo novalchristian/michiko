@@ -1,0 +1,113 @@
+/* style.css */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg'); /* Replace 'background.jpg' with your image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 40px 10px 40px;
+    font-family: sans-serif;
+}
+.logo-m{
+    margin-right: 50px;
+}
+
+.logo {
+    width: 110px;
+    margin-left: 130px;
+    margin-right: 250px;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    text-decoration: overline;
+}
+
+.nav-links a {
+    color: black;;
+    text-align: center;
+    padding: 0px 16px;
+    text-decoration: none;
+    margin: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: overline; 
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background-color: transparent;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Style radio buttons to be in-line */
+input[type="radio"] {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.btn {
+    background: #4CAF50;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #1e5220;
+}

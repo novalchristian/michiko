@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="contact_us.css">
+    <script>
+        function validateForm() {
+            let fullName = document.forms["myForm"]["full-name"].value;
+            let email = document.forms["myForm"]["email"].value;
+            let username = document.forms["myForm"]["username"].value;
+            let password = document.forms["myForm"]["password"].value;
+            let religion = document.forms["myForm"]["religion"].value;
+            let address = document.forms["myForm"]["address"].value;
+            let hobbies = document.querySelectorAll('input[name="hobbies[]"]:checked'); 
+
+            if (fullName === "") {
+                alert("Please enter your 'Full Name'");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Please enter your 'Email'");
+                return false;
+            }
+
+            if (username === "") {
+                alert("Please enter your 'Username'");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Please enter your 'Password'");
+                return false;
+            }
+
+            if (religion === "default") {
+                alert("Please select your 'Religion'");
+                return false;
+            }
+
+            if (address === "") {
+                alert("Please enter your 'Address'");
+                return false;
+            }
+
+            if (hobbies.length === 0) {
+                alert("Please checklist your 'Hobby'");
+                return false;
+            }
+        }
+    </script>   
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-m">
+         <img src="images/forisa.png" alt="Logo" class="logo">
+     </div>
+     <div class="tulisan">
+         <nav class="nav-links">
+             <a href="index.html">HOME</a>
+             <a href="biodata.html">BIODATA</a>
+             <a href="contact_us.html">CONTACT US</a>
+             <a href="fun.html">FUN</a>
+         </nav>
+     </div>
+     </header>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form name="myForm" action="submit_form.php" onsubmit="return validateForm()" method="post">
+            <div class="form-group">
+                <label for="full-name">Full Name :</label>
+                <input type="text" id="full-name" name="full-name">
+            </div> <br>
+
+            <div class="form-group">
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" name="email">
+            </div> <br>
+
+            <div class="form-group">
+                <label for="username">Username :</label>
+                <input type="text" id="username" name="username">
+            </div> <br>
+
+            <div class="form-group">
+                <label for="password">Password :</label>
+                <input type="password" id="password" name="password">
+            </div> <br>
+
+            <div class="form-group">
+                <label>Gender :</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for "female">Female</label>
+            </div> <br><br>
+
+            <div class="form-group">
+                <label for="religion">Religion :</label>
+                <select id="religion" name="religion">
+                    <option value="islam">Islam</option>
+                    <option value="christianity">Christianity</option>
+                    <option value="hinduism">Hinduism</option>
+                    <option value="buddhism">Buddhism</option>
+                    <option value="other">Other</option>
+                </select>
+            </div> <br><br>
+
+            <div class="form-group">
+                <label for="address">Address :</label>
+                <textarea id="address" name="address" rows="4" cols="50"></textarea>
+            </div> <br><br>
+
+            <div class="form-group">
+                <label>Hobbies :</label>
+                <input type="checkbox" id="hobby1" name="hobbies[]" value="reading">
+                <label for="hobby1">Painting</label>
+                <input type="checkbox" id="hobby2" name="hobbies[]" value="traveling">
+                <label for="hobby2">Sports</label>
+                <input type="checkbox" id="hobby3" name="hobbies[]" value="sports">
+                <label for="hobby3">Reading</label>
+            </div> <br><br>
+
+            <div class="form-group">
+                <input type="submit" class="btn" value="Save">
+            </div>
+        </form>
+       
+    </div>
+</body>
+</html>
