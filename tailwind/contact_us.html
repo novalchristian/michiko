@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="font-sans">
+
+    <header class="navbar bg-white shadow-green-500 md:px-44 py-3 fixed w-full top-0 z-10 shadow-xl"> 
+        <div class="flex items-center">
+            <div class="md:mr-72">
+                <img src="images/forisa.png" alt="Logo" class="w-28">
+            </div>
+            <nav class="hidden md:flex md:space-x-10">
+                <a href="index.html" class="text-black hover:underline">Home</a>
+                <a href="biodata.html" class="text-black hover:underline">Biodata</a>
+                <a href="contact_us.html" class="text-black hover:underline">Contact Us</a>
+                <a href="freepage.html" class="text-black hover:underline">Free Page</a>
+            </nav>
+        </div>
+    </header>
+
+<div>
+    <script>
+      function validateForm() {
+            let fullName = document.forms["myForm"]["full-name"].value;
+            let email = document.forms["myForm"]["email"].value;
+            let username = document.forms["myForm"]["username"].value;
+            let password = document.forms["myForm"]["password"].value;
+            let religion = document.forms["myForm"]["religion"].value;
+            let address = document.forms["myForm"]["address"].value;
+            let hobbies = document.querySelectorAll('input[name="hobbies[]"]:checked'); 
+
+            if (fullName === "") {
+                alert("Please enter your 'Full Name'");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Please enter your 'Email'");
+                return false;
+            }
+
+            if (username === "") {
+                alert("Please enter your 'Username'");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Please enter your 'Password'");
+                return false;
+            }
+
+            if (religion === "default") {
+                alert("Please select your 'Religion'");
+                return false;
+            }
+
+            if (address === "") {
+                alert("Please enter your 'Address'");
+                return false;
+            }
+
+            if (hobbies.length === 0) {
+                alert("Please checklist your 'Hobby'");
+                return false;
+            }
+        }
+  </script></div>
+
+<div class="container mx-auto p-6 bg-black bg-opacity-70 rounded-lg shadow-lg mt-28">
+  <h2 class="text-white text-3xl mb-6">Contact Us</h2>
+  <form name="myForm" action="submit_form.php" onsubmit="return validateForm()" method="post">
+      <div class="form-group mb-4">
+          <label for="full-name" class="text-white block">Full Name :</label>
+          <input type="text" id="full-name" name="full-name" class="bg-transparent border-b-2 border-white text-white p-2 w-full">
+      </div>
+      <div class="form-group mb-4">
+        <label for="email" class="text-white block">E-mail :</label>
+        <input type="email" id="email" name="email" class="bg-transparent border-b-2 border-white text-white p-2 w-full">
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="username" class="text-white block">Username :</label>
+      <input type="text" id="username" name="username" class="bg-transparent border-b-2 border-white text-white p-2 w-full">
+  </div>
+  
+  <div class="form-group mb-4">
+      <label for="password" class="text-white block">Password :</label>
+      <input type="password" id="password" name="password" class="bg-transparent border-b-2 border-white text-white p-2 w-full">
+  </div>
+  
+  <div class="form-group mb-4">
+      <label class="text-white block">Gender :</label>
+      <input type="radio" id="male" name="gender" value="male" class="text-white mr-2">
+      <label for="male" class="text-white mr-4">Male</label>
+      <input type="radio" id="female" name="gender" value="female" class="text-white mr-2">
+      <label for="female" class="text-white">Female</label>
+  </div>
+
+  <div class="form-group mb-4">
+    <label for="religion" class="text-white block">Religion :</label>
+    <select id="religion" name="religion" class="bg-transparent border-b-2 border-white text-white p-2 w-full">
+        <option value="islam">Islam</option>
+        <option value="christianity">Christianity</option>
+        <option value="hinduism">Hinduism</option>
+        <option value="buddhism">Buddhism</option>
+        <option value="other">Other</option>
+    </select>
+</div>
+
+<div class="form-group mb-4">
+    <label for="address" class="text-white block">Address :</label>
+    <textarea id="address" name="address" rows="4" cols="50" class="bg-transparent border-b-2 border-white text-white p-2 w-full"></textarea>
+</div>
+
+<div class="form-group mb-4">
+    <label class="text-white block">Hobbies :</label>
+    <input type="checkbox" id="hobby1" name="hobbies[]" value="reading" class="text-white mr-2">
+    <label for="hobby1" class="text-white mr-4">Painting</label>
+    <input type="checkbox" id="hobby2" name="hobbies[]" value="traveling" class="text-white mr-2">
+    <label for="hobby2" class="text-white mr-4">Sports</label>
+    <input type="checkbox" id="hobby3" name="hobbies[]" value="sports" class="text-white mr-2">
+    <label for="hobby3" class="text-white">Reading</label>
+</div>
+
+
+      <div class="form-group mb-4">
+          <input type="submit" class="btn bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+      </div>
+  </form>
+</div>
+
+    
+        
+
+        <footer class="bg-green-500 py-10 mt-10">
+            <div class="container mx-auto max-w-screen-lg">
+              <div class="flex flex-wrap justify-center text-white text-center">
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <img src="images/forisa.png" alt="Forisa" class="w-36 mx-auto bg-white p-3 px-5 block rounded-xl">
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">Contact Us</h6>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">About Us</h6>
+                  <ul class="list-none">
+                    <li>History</li>
+                    <li>Vision &amp; Mission</li>
+                    <li>Core Values</li>
+                    <li>Manufacture</li>
+                    <li>Research &amp; Development</li>
+                    <li>Distributions</li>
+                  </ul>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">Our Products</h6>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">Career</h6>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">News</h6>
+                  <ul class="list-none pl-0 md:pl-16">
+                    <li>News &amp; Events</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+          
+
+
+</body>
+
+</html>

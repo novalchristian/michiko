@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="font-sans">
+
+    <header class="navbar bg-white shadow-green-500 md:px-44 py-3 fixed w-full top-0 z-10 shadow-xl"> 
+        <div class="flex items-center">
+            <div class="md:mr-72">
+                <img src="images/forisa.png" alt="Logo" class="w-28">
+            </div>
+            <nav class="hidden md:flex md:space-x-10">
+                <a href="index.html" class="text-black hover:underline">Home</a>
+                <a href="biodata.html" class="text-black hover:underline">Biodata</a>
+                <a href="contact_us.html" class="text-black hover:underline">Contact Us</a>
+                <a href="freepage.html" class="text-black hover:underline">Free Page</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="flex justify-center mt-28">
+        <canvas id="drawingCanvas" class="border border-gray-400" width="1000" height="600"></canvas>
+    </div>
+    <div class="flex justify-center mt-4">
+        <button id="resetButton" class="px-6 py-3 bg-gray-500 text-white rounded-full">Reset</button>
+    </div>
+    <script>
+        const canvas = document.getElementById("drawingCanvas");
+        const ctx = canvas.getContext("2d");
+        let painting = false;
+
+        canvas.addEventListener("mousedown", () => {
+            painting = true;
+        });
+
+        canvas.addEventListener("mouseup", () => {
+            painting = false;
+            ctx.beginPath();
+        });
+
+        canvas.addEventListener("mousemove", draw);
+
+        function draw(e) {
+            if (!painting) return;
+
+            ctx.lineWidth = 5;
+            ctx.lineCap = "round";
+            ctx.strokeStyle = "black";
+
+            ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        }
+
+        const resetButton = document.getElementById("resetButton");
+        resetButton.addEventListener("click", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+    </script>
+
+    
+        <footer class="bg-green-500 py-10 mt-10">
+            <div class="container mx-auto max-w-screen-lg">
+              <div class="flex flex-wrap justify-center text-white text-center">
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <img src="images/forisa.png" alt="Forisa" class="w-36 mx-auto bg-white p-3 px-5 block rounded-xl">
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">Contact Us</h6>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">About Us</h6>
+                  <ul class="list-none">
+                    <li>History</li>
+                    <li>Vision &amp; Mission</li>
+                    <li>Core Values</li>
+                    <li>Manufacture</li>
+                    <li>Research &amp; Development</li>
+                    <li>Distributions</li>
+                  </ul>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">Our Products</h6>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">Career</h6>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/6 mb-4 md:mb-0">
+                  <h6 class="font-bold mb-3">News</h6>
+                  <ul class="list-none pl-0 md:pl-16">
+                    <li>News &amp; Events</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+</body>
+
+</html>

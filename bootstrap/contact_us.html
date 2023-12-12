@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    function validateForm() {
+      let fullName = document.forms["myForm"]["full-name"].value;
+      let email = document.forms["myForm"]["email"].value;
+      let username = document.forms["myForm"]["username"].value;
+      let password = document.forms["myForm"]["password"].value;
+      let religion = document.forms["myForm"]["religion"].value;
+      let address = document.forms["myForm"]["address"].value;
+      let hobbies = document.querySelectorAll('input[name="hobbies[]"]:checked'); 
+  
+      if (fullName === "") {
+        alert("Please enter your 'Full Name'");
+        return false;
+      }
+  
+      if (email === "") {
+        alert("Please enter your 'Email'");
+        return false;
+      }
+  
+      if (username === "") {
+        alert("Please enter your 'Username'");
+        return false;
+      }
+  
+      if (password === "") {
+        alert("Please enter your 'Password'");
+        return false;
+      }
+  
+      if (religion === "default") {
+        alert("Please select your 'Religion'");
+        return false;
+      }
+  
+      if (address === "") {
+        alert("Please enter your 'Address'");
+        return false;
+      }
+  
+      if (hobbies.length === 0) {
+        alert("Please check your 'Hobbies'");
+        return false;
+      }
+    }
+  </script>
+  
+ </head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <nav class="flex items-center"></nav>
+          <img src="images/forisa.png" alt="Logo" class="logo" width="110">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex gap-3 mx-auto">
+    
+              <li class="nav-item">
+                <a class="nav-link overline" href="index.html">Home</a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" href="biodata.html">Biodata</a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" href="contact_us.html">Contact Us</a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" href="freepage.html">Free Page</a>
+              </li>
+    
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+
+
+          <div class="container mt-5">
+            <h2 class="text-black mt-4 py-3 text-center ">Contact Us</h2>
+            <form name="myForm" action="submit_form.php" onsubmit="return validateForm()" method="post">
+                <div class="form-group">
+                    <label for="full-name" class="text-black p-3">Full Name :</label>
+                    <input type="text" id="full-name" name="full-name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="text-black p-3">E-mail :</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+        
+                <div class="form-group">
+                    <label for="username" class="text-black p-3">Username :</label>
+                    <input type="text" id="username" name="username" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="text-black p-3">Password :</label>
+                    <input type="password" id="password" name="password" class="form-control">
+                </div>
+                
+                <!-- <div class="form-group">
+                    <label class="text-black p-3">Gender :</label>
+                    <div class="form-check">
+                        <input type="radio" id="male" name="gender" value="male" class="form-check-input">
+                        <label for="male" class="form-check-label text-black mr-4">Male</label>
+                        <input type="radio" id="female" name="gender" value="female" class="form-check-input">
+                        <label for="female" class="form-check-label text-black mr-4">Female</label>
+                    </div>
+                </div> -->
+
+                <div class="form-group mb-4">
+                    <label class="text-black d-block p-3">Gender :</label>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="male" name="gender" value="male">
+                      <label class="form-check-label text-black mr-4" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="female" name="gender" value="female">
+                      <label class="form-check-label text-black" for="female">Female</label>
+                    </div>
+                  </div>
+                  
+
+                <div class="form-group">
+                    <label for="religion" class="text-black p-3">Religion :</label>
+                    <select id="religion" name="religion" class="form-control">
+                        <option value="islam">Islam</option>
+                        <option value="christianity">Christianity</option>
+                        <option value="hinduism">Hinduism</option>
+                        <option value="buddhism">Buddhism</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="address" class="text-black p-3">Address :</label>
+                    <textarea id="address" name="address" rows="4" class="form-control"></textarea>
+                </div>
+        
+                <!-- <div class="form-group p-3">
+                    <label class="text-black">Hobbies :</label>
+                    <div class="form-check">
+                        <input type="checkbox" id="hobby1" name="hobbies[]" value="reading" class="form-check-input">
+                        <label for="hobby1" class="form-check-label text-black mr-4">Painting</label>
+                        <input type="checkbox" id="hobby2" name="hobbies[]" value="painting" class="form-check-input">
+                        <label for="hobby2" class="form-check-label text-black mr-4">Sports</label>
+                        <input type="checkbox" id="hobby3" name="hobbies[]" value="sports" class="form-check-input">
+                        <label for="hobby3" class="form-check-label text-bl">Reading</label>
+                    </div>
+                </div> -->
+
+                <div class="form-group mb-4">
+                    <label class="text-black d-block p-4">Hobbies :</label>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="hobby1" name="hobbies[]" value="painting">
+                      <label class="form-check-label text-black mr-4" for="hobby1">Painting</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="hobby2" name="hobbies[]" value="sports">
+                      <label class="form-check-label text-black mr-4" for="hobby2">Sports</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="hobby3" name="hobbies[]" value="reading">
+                      <label class="form-check-label text-black" for="hobby3">Reading</label>
+                    </div>
+                  </div>
+                  
+        
+                <div class="form-group p-3">
+                    <input type="submit" class="btn btn-success mb-5" value="Save">
+                </div>
+            </form>
+        </div>
+
+ 
+ <!-- FOOTER -->
+  <footer class="bg-success py-5">
+    <div class="container">
+      <div class="row text-white text-center">
+        <div class="col-md-2">
+          <img src="images/forisa.png" alt="Forisa" class="img-fluid bg-white p-2 d-block"
+            style="height: 50px; width: 144px; height: 70px; border-radius: 10px;">
+        </div>
+        <div class="col-md-2">
+          <h6 class="font-weight-bold mb-3">Contact Us</h6>
+        </div>
+        <div class="col-md-2">
+          <h6 class="font-weight-bold mb-3">About Us</h6>
+          <ul class="list-unstyled">
+            <li>History</li>
+            <li>Core Values</li>
+            <li>Manufacture</li>
+            <li>Research & Development</li>
+            <li>Distributions</li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="font-weight-bold mb-3">Our Products</h6>
+        </div>
+        <div class="col-md-2">
+          <h6 class="font-weight-bold mb-3">Career</h6>
+        </div>
+        <div class="col-md-2">
+          <h6 class="font-weight-bold mb-3">News</h6>
+          <ul class="list-unstyled">
+            <li>News & Events</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <div class="carousel-item" data-bs-interval="2000">
+
+  </div>
+  <!-- </div>
+          </div>
+      </div> -->
+  <!-- </section> -->
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
